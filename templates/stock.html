@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ symbol }} - Stock Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/" class="back-link">← Back</a> {{ symbol }} - Stock Analysis</h1>
+        </header>
+        
+        <main>
+            <section class="chart-section">
+                <h2>Historical Price Charts</h2>
+                <div class="chart-controls">
+                    <button class="chart-btn active" data-period="3m">3 Months</button>
+                    <button class="chart-btn" data-period="6m">6 Months</button>
+                    <button class="chart-btn" data-period="1y">1 Year</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </section>
+            
+            <section class="prediction-section">
+                <h2>Future Price Prediction</h2>
+                <p>Click the button below to generate AI-powered price predictions</p>
+                <button id="predictBtn" class="predict-btn">Predict Future Prices</button>
+                
+                <div class="prediction-results" id="predictionResults">
+                    <!-- Prediction results will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script>
+        const symbol = "{{ symbol }}";
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

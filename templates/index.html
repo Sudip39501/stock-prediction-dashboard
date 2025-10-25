@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stock Market Analyzer</h1>
+            <p>Track and analyze popular stocks with AI-powered predictions</p>
+        </header>
+        
+        <main>
+            <div class="stocks-grid" id="stocksGrid">
+                <!-- Stock cards will be loaded here -->
+            </div>
+            
+            <div class="loading" id="loading">
+                Loading stocks data...
+            </div>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
